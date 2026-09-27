@@ -1,0 +1,139 @@
+:root {
+  --bg: #000;
+  --panel: #121212;
+  --panel2: #1a1a1a;
+  --border: #333;
+  --text: #f0f0f0;
+  --muted: #a2a9b1;
+  --link: #6cb6ff;
+  --accent: #3366cc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Linux Libertine", Georgia, "Times New Roman", serif;
+}
+
+.topbar {
+  background: #101418;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { font-size: 1.4em; font-weight: bold; letter-spacing: 0.5px; }
+.logo em { font-style: normal; color: var(--link); }
+.nav-right { display: flex; gap: 10px; align-items: center; font-family: sans-serif; font-size: 0.85em; }
+.nav-right span { color: var(--muted); }
+.nav-right a, .nav-right button {
+  color: var(--link);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+.nav-right a:hover, .nav-right button:hover { text-decoration: underline; }
+
+.container { max-width: 720px; margin: 0 auto; padding: 20px 16px 60px; }
+
+h1 { font-size: 1.8em; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-top: 0; }
+h2 { font-size: 1.3em; border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+
+.wiki-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+label { display: block; margin: 12px 0 4px; font-family: sans-serif; font-size: 0.9em; color: var(--muted); }
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 8px;
+  background: #000;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: sans-serif;
+  font-size: 1em;
+}
+textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  background: #000;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: sans-serif;
+  font-size: 1em;
+  resize: vertical;
+}
+
+button.btn, a.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-family: sans-serif;
+  font-size: 0.95em;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: none;
+}
+button.btn:hover, a.btn:hover { background: #274c8f; }
+button.btn.secondary { background: #333; }
+button.btn.secondary:hover { background: #444; }
+button.btn.small { padding: 4px 10px; font-size: 0.85em; margin: 0; }
+
+.error { color: #ff8080; font-family: sans-serif; font-size: 0.9em; margin-top: 6px; }
+.ok { color: #7fdc7f; font-family: sans-serif; font-size: 0.9em; margin-top: 6px; }
+.hint { color: var(--muted); font-family: sans-serif; font-size: 0.85em; }
+
+.big-actions { display: flex; gap: 12px; margin-top: 20px; }
+.big-actions .btn { flex: 1; text-align: center; font-size: 1.1em; padding: 20px 10px; }
+
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-family: sans-serif;
+}
+.list-row:last-child { border-bottom: none; }
+.list-row .name { font-weight: bold; }
+.list-row .uname { color: var(--muted); font-size: 0.85em; }
+.list-row .preview { color: var(--muted); font-size: 0.85em; max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.chat-window { display: flex; flex-direction: column; height: 60vh; }
+.chat-messages { flex: 1; overflow-y: auto; border: 1px solid var(--border); background: var(--panel); padding: 10px; }
+.msg { max-width: 75%; margin-bottom: 8px; padding: 6px 10px; border-radius: 4px; font-family: sans-serif; font-size: 0.95em; }
+.msg.mine { background: var(--accent); color: #fff; margin-left: auto; }
+.msg.theirs { background: #2a2a2a; }
+.msg .time { display: block; font-size: 0.7em; color: #ccc; margin-top: 3px; }
+
+.chat-input { display: flex; gap: 8px; margin-top: 8px; }
+.chat-input input { flex: 1; }
+
+.post-item { border-bottom: 1px solid var(--border); padding: 12px 0; font-family: sans-serif; }
+.post-item:last-child { border-bottom: none; }
+.post-item .meta { color: var(--muted); font-size: 0.8em; margin-top: 6px; }
+.post-item .viewers-link { color: var(--link); cursor: pointer; font-size: 0.8em; }
+
+.back-link { color: var(--link); cursor: pointer; font-family: sans-serif; font-size: 0.9em; text-decoration: none; }
+
+.search-results { margin-top: 10px; }
